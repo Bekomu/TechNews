@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32630.192
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechNews.Business", "TechNews\TechNews.Business.csproj", "{B399718E-970D-45E5-B3FB-72F07430F20D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechNews.Core", "TechNews.Core\TechNews.Core.csproj", "{493FA6E1-CD7D-4E85-80DD-4D6866734D4C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechNews.DataAccess", "TechNews.DataAccess\TechNews.DataAccess.csproj", "{F106DB43-5320-44BF-88F8-574483ADC34A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechNews.DTOs", "TechNews.DTOs\TechNews.DTOs.csproj", "{617B8347-CED7-419F-A0E4-6726B10ACCAF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechNews.Entity", "TechNews.Entity\TechNews.Entity.csproj", "{DD871C76-532F-4C32-B8EB-C72AC56E0C98}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechNews.Mapping", "TechNews.Mapping\TechNews.Mapping.csproj", "{72BBC007-FE31-485C-A9DE-B098A6278BE7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechNews.API", "TechNews.API\TechNews.API.csproj", "{7D59FA39-1D01-4D9E-868E-B16D7F75E426}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B399718E-970D-45E5-B3FB-72F07430F20D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B399718E-970D-45E5-B3FB-72F07430F20D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B399718E-970D-45E5-B3FB-72F07430F20D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B399718E-970D-45E5-B3FB-72F07430F20D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{493FA6E1-CD7D-4E85-80DD-4D6866734D4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{493FA6E1-CD7D-4E85-80DD-4D6866734D4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{493FA6E1-CD7D-4E85-80DD-4D6866734D4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{493FA6E1-CD7D-4E85-80DD-4D6866734D4C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F106DB43-5320-44BF-88F8-574483ADC34A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F106DB43-5320-44BF-88F8-574483ADC34A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F106DB43-5320-44BF-88F8-574483ADC34A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F106DB43-5320-44BF-88F8-574483ADC34A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{617B8347-CED7-419F-A0E4-6726B10ACCAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{617B8347-CED7-419F-A0E4-6726B10ACCAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{617B8347-CED7-419F-A0E4-6726B10ACCAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{617B8347-CED7-419F-A0E4-6726B10ACCAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD871C76-532F-4C32-B8EB-C72AC56E0C98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD871C76-532F-4C32-B8EB-C72AC56E0C98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD871C76-532F-4C32-B8EB-C72AC56E0C98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD871C76-532F-4C32-B8EB-C72AC56E0C98}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72BBC007-FE31-485C-A9DE-B098A6278BE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72BBC007-FE31-485C-A9DE-B098A6278BE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72BBC007-FE31-485C-A9DE-B098A6278BE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72BBC007-FE31-485C-A9DE-B098A6278BE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D59FA39-1D01-4D9E-868E-B16D7F75E426}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D59FA39-1D01-4D9E-868E-B16D7F75E426}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D59FA39-1D01-4D9E-868E-B16D7F75E426}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D59FA39-1D01-4D9E-868E-B16D7F75E426}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {333BCC5C-3FFC-45FA-91AE-149B432E6224}
+	EndGlobalSection
+EndGlobal
