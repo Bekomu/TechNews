@@ -22,7 +22,7 @@ namespace TechNews.Business.EntityValidation.Post
                 .NotEmpty().WithMessage(notNull)
                 .NotNull().WithMessage(notNull);
 
-            RuleFor(x => x.CreatorId)
+            RuleFor(x => x.AuthorId)
                 .NotEmpty().WithMessage(notNull)
                 .NotNull().WithMessage(notNull);
 

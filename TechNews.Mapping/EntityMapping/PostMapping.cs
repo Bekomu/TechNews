@@ -17,7 +17,7 @@ namespace TechNews.Mapping.EntityMapping
             base.Configure(builder);
             builder.Property(x => x.Title).IsRequired(true);
             builder.Property(x => x.Content).IsRequired(true);
-            builder.HasOne(x => x.Author).WithMany(x => x.Posts).HasForeignKey(x => x.CreatorId).OnDelete(DeleteBehavior.NoAction);
+            builder.HasOne(x => x.Author).WithMany(x => x.Posts).HasForeignKey(x => x.AuthorId).OnDelete(DeleteBehavior.NoAction);
         }
     }
 }

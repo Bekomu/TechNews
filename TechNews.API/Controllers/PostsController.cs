@@ -2,75 +2,85 @@
 using Microsoft.AspNetCore.Mvc;
 using TechNews.Business.Abstract;
 using TechNews.Core.Enums;
-using TechNews.Dtos.Admins;
+using TechNews.DTOs.Posts;
 
 namespace TechNews.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AdminsController : ControllerBase
+    public class PostsController : ControllerBase
     {
-        private readonly IAdminService _adminService;
+        private readonly IPostService _postService;
 
-        public AdminsController(IAdminService adminService)
+        public PostsController(IPostService postService)
         {
-            _adminService = adminService;
+            _postService = postService;
         }
 
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-            var result = await _adminService.GetAll();
+            var result = await _postService.GetAll();
 
-            if (result.ResultStatus != ResultStatus.Success) return BadRequest(result);
+            if(result.ResultStatus != ResultStatus.Success) return BadRequest(result);
 
             return Ok(result);
         }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> Get(Guid id)
+        public async Task<IActionResult> GetById(Guid id)
         {
-            var result = await _adminService.GetById(id);
+            var result = await _postService.GetById(id);
+
+            if(result.ResultStatus != ResultStatus.Success) return BadRequest(result);
+
+            return Ok(result);
+        }
+
+        [HttpGet("GetAuthorsPosts")]
+        public async Task<IActionResult> GetAuthorPosts(Guid id)
+        {
+            var result = await _postService.GetAllByAuthorId(id);
 
             if (result.ResultStatus != ResultStatus.Success) return BadRequest(result);
 
             return Ok(result);
         }
 
+
         [HttpPost]
-        public async Task<IActionResult> Add(AdminCreateDTO createAdminDto)
+        public async Task<IActionResult> Add(PostCreateDTO postCreateDTO)
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
 
-            var result = await _adminService.Add(createAdminDto);
+            var result = await _postService.Add(postCreateDTO);
 
             if (result.ResultStatus != ResultStatus.Success) return BadRequest(result);
 
             return Ok(result);
-
         }
 
         [HttpPut]
-        public async Task<ActionResult> Update([FromBody] AdminUpdateDTO adminUpdateDto)
+        public async Task<IActionResult> Update(PostUpdateDTO postUpdateDTO)
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
 
-            var result = await _adminService.Update(adminUpdateDto);
+            var result = await _postService.Update(postUpdateDTO);
 
             if (result.ResultStatus != ResultStatus.Success) return BadRequest(result);
 
             return Ok(result);
         }
 
-
-        [HttpDelete("{id}")]
+        [HttpDelete]
         public async Task<IActionResult> Delete(Guid id)
         {
-            var result = await _adminService.Delete(id);
+            var result = await _postService.Delete(id);
 
             if (result.ResultStatus != ResultStatus.Success) return BadRequest(result);
 
             return Ok(result);
         }
+
     }
 }

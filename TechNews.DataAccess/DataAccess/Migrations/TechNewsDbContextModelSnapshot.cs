@@ -288,6 +288,9 @@ namespace TechNews.DataAccess.DataAccess.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<Guid>("AuthorId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<string>("Content")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -298,9 +301,6 @@ namespace TechNews.DataAccess.DataAccess.Migrations
 
                     b.Property<DateTime>("CreatedDate")
                         .HasColumnType("datetime2");
-
-                    b.Property<Guid>("CreatorId")
-                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("DeletedBy")
                         .HasColumnType("nvarchar(max)");
@@ -327,7 +327,7 @@ namespace TechNews.DataAccess.DataAccess.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CreatorId");
+                    b.HasIndex("AuthorId");
 
                     b.ToTable("Posts");
                 });
@@ -387,7 +387,7 @@ namespace TechNews.DataAccess.DataAccess.Migrations
                 {
                     b.HasOne("TechNews.Entity.Concrete.Admin", "Author")
                         .WithMany("Posts")
-                        .HasForeignKey("CreatorId")
+                        .HasForeignKey("AuthorId")
                         .OnDelete(DeleteBehavior.NoAction)
                         .IsRequired();
 

@@ -13,7 +13,7 @@ namespace TechNews.Entity.Concrete
         public string Content { get; set; }
         public string ImageURL { get; set; }
 
-        public Guid CreatorId { get; set; }
+        public Guid AuthorId { get; set; }
         public virtual Admin Author { get; set; }
 
     }

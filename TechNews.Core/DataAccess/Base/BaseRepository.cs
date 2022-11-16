@@ -52,8 +52,7 @@ namespace TechNews.Core.DataAccess.Base
         public async Task<TEntity> GetById(Guid id)
         {
             var entity = await _table.FindAsync(id);
-
-            return entity.Status != Enums.Status.Deleted ? entity : null;
+            return entity == null ? null : (entity.Status != Enums.Status.Deleted ? entity : null);
         }
 
         public async Task<int> Save()

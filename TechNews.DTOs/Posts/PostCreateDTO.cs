@@ -12,6 +12,6 @@ namespace TechNews.DTOs.Posts
         public string Content { get; set; }
         public string ImageURL { get; set; }
 
-        public Guid CreatorId { get; set; }
+        public Guid AuthorId { get; set; }
     }
 }
