@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TechNews.Authentication.DTOs;
 using TechNews.Authentication.Results;
 using TechNews.Authentication.TokenServices.Abstract;
 using TechNews.Business.Abstract;
@@ -48,11 +49,9 @@ namespace TechNews.Business.Concrete
             await _refreshTokenRepository.Add(refreshToken);
         }
 
-
-        //--------------
-        public async Task<IDataResult<AdminDTO>> Register(AdminCreateDTO createAdminDto)
+        public async Task<IDataResult<AdminDTO>> Register(RegisterDTO registerDTO)
         {
-            var createdAdmin = _mapper.Map<Admin>(createAdminDto);
+            var createdAdmin = _mapper.Map<Admin>(registerDTO);
             var newUser = new IdentityUser()
             {
                 Email = createdAdmin.Email,
@@ -62,7 +61,7 @@ namespace TechNews.Business.Concrete
                 EmailConfirmed = true
             };
 
-            IdentityResult identityResult = await _userManager.CreateAsync(newUser, createAdminDto.Password);
+            IdentityResult identityResult = await _userManager.CreateAsync(newUser, registerDTO.Password);
 
             if (!identityResult.Succeeded)
             {
@@ -76,12 +75,8 @@ namespace TechNews.Business.Concrete
             await _adminRepository.Add(createdAdmin);
             var result = _mapper.Map<AdminDTO>(createdAdmin);
 
-            await AddRefreshToken(user.Id);
-
             return new DataResult<AdminDTO>(ResultStatus.Success, result);
         }
-        //--------------
-
 
         public async Task<AuthResult> Authenticate(string email)
         {

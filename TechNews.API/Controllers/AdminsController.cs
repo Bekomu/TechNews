@@ -18,6 +18,7 @@ namespace TechNews.API.Controllers
             _adminService = adminService;
         }
 
+        [Authorize]
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {

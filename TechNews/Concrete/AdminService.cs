@@ -30,37 +30,6 @@ namespace TechNews.Business.Concrete
             _accountService = accountService;
         }
 
-        // TODO - önemli
-
-        public async Task<IDataResult<AdminDTO>> Add(RegisterDTO registerDTO)
-        {
-            var createdAdmin = _mapper.Map<Admin>(registerDTO);
-            var newUser = new IdentityUser()
-            {
-                Email = createdAdmin.Email,
-                NormalizedEmail = createdAdmin.Email.ToUpper(),
-                UserName = createdAdmin.UserName,
-                NormalizedUserName = createdAdmin.UserName.ToUpper(),
-                EmailConfirmed = true
-            };
-
-            IdentityResult identityResult = await _userManager.CreateAsync(newUser, registerDTO.Password);
-
-            if (!identityResult.Succeeded)
-            {
-                return new DataResult<AdminDTO>(ResultStatus.Error, $"Admin couldn't be added - {identityResult}", null);
-            }
-
-            IdentityUser user = await _userManager.FindByEmailAsync(createdAdmin.Email);
-            await _userManager.AddToRoleAsync(user, nameof(Roles.Admin));
-
-            createdAdmin.IdentityId = user.Id;
-            await _adminRepository.Add(createdAdmin);
-            var result = _mapper.Map<AdminDTO>(createdAdmin);
-
-            return new DataResult<AdminDTO>(ResultStatus.Success, result);
-        }
-
         public async Task<IResult> Delete(Guid id)
         {
             var admin = await _adminRepository.GetById(id);

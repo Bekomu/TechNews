@@ -13,9 +13,6 @@ namespace TechNews.Business.Abstract
     {
         Task<IDataResult<List<AdminDTO>>> GetAll();
         Task<IDataResult<AdminDTO>> GetById(Guid id);
-        Task<IDataResult<AdminDTO>> Add(RegisterDTO registerDTO);
-        // TODO - önemli
-
         Task<IDataResult<AdminDTO>> Update(AdminUpdateDTO updateAdminDto);
         Task<IResult> Delete(Guid id);
     }

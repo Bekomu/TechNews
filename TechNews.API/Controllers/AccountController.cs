@@ -11,12 +11,10 @@ namespace TechNews.API.Controllers
     public class AccountController : ControllerBase
     {
         private readonly IAccountService _accountService;
-        private readonly IAdminService _adminService;
 
-        public AccountController(IAccountService accountService, IAdminService adminService)
+        public AccountController(IAccountService accountService)
         {
             _accountService = accountService;
-            _adminService = adminService;
         }
 
 
@@ -52,7 +50,7 @@ namespace TechNews.API.Controllers
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
 
-            var result = await _adminService.Add(registerDTO);
+            var result = await _accountService.Register(registerDTO);
 
             if (result.ResultStatus != ResultStatus.Success) return BadRequest(result);
 

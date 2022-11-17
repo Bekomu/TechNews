@@ -19,7 +19,7 @@ using TechNews.DataAccess.EntityFrameWork.Context;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddDbContext<TechNewsDbContext>(o => o.UseSqlServer(builder.Configuration.GetConnectionString("ConStr")));
+builder.Services.AddDbContext<TechNewsDbContext>(o => o.UseSqlServer(builder.Configuration.GetConnectionString("ConStrProd")));
 
 
 // FluentValidation
@@ -28,6 +28,7 @@ builder.Services.Configure<ApiBehaviorOptions>(o =>
     o.SuppressModelStateInvalidFilter = true;
 });
 
+builder.Services.AddCors();
 
 // Automapper
 builder.Services.AddAutoMapper(typeof(IProfile).Assembly);
