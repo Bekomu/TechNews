@@ -17,15 +17,20 @@ namespace TechNews.Business.Concrete
     {
         private readonly IPostRepository _postRepository;
         private readonly IMapper _mapper;
+        private readonly IAdminRepository _adminRepository;
 
-        public PostService(IPostRepository postRepository, IMapper mapper)
+        public PostService(IPostRepository postRepository, IMapper mapper, IAdminRepository adminRepository)
         {
             _postRepository = postRepository;
             _mapper = mapper;
+            _adminRepository = adminRepository;
         }
 
         public async Task<IDataResult<PostDTO>> Add(PostCreateDTO postCreateDTO)
         {
+            var admin = await _adminRepository.GetById(postCreateDTO.AuthorId);
+            if (admin == null) return new DataResult<PostDTO>(ResultStatus.Error, "Author not found, are you sure you entered correct AuthorId ?", null);
+
             var createdPost = _mapper.Map<Post>(postCreateDTO);
             await _postRepository.Add(createdPost);
             var result = _mapper.Map<PostDTO>(createdPost);

@@ -12,6 +12,7 @@ namespace TechNews.Business.EntityValidation.Admin
     {
         readonly string notNull = "This value is required";
         readonly string wrongDate = "Please enter valid date.";
+        readonly string wrongEmail = "Please enter valid email.";
 
         public CreateAdminValidator()
         {
@@ -34,7 +35,8 @@ namespace TechNews.Business.EntityValidation.Admin
 
             RuleFor(x => x.Email)
                 .NotEmpty().WithMessage(notNull)
-                .NotNull().WithMessage(notNull);
+                .NotNull().WithMessage(notNull)
+                .EmailAddress().WithMessage(wrongEmail);
         }
 
         public bool BeAValidDate<T>(T date)
