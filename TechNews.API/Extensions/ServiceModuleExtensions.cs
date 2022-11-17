@@ -22,6 +22,7 @@ namespace TechNews.API.Extensions
 
             builder.RegisterType<AdminService>().As<IAdminService>();
 
+
             base.Load(builder);
         }
     }

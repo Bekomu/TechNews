@@ -3,19 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechNews.Business", "TechNews\TechNews.Business.csproj", "{B399718E-970D-45E5-B3FB-72F07430F20D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TechNews.Business", "TechNews\TechNews.Business.csproj", "{B399718E-970D-45E5-B3FB-72F07430F20D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechNews.Core", "TechNews.Core\TechNews.Core.csproj", "{493FA6E1-CD7D-4E85-80DD-4D6866734D4C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TechNews.Core", "TechNews.Core\TechNews.Core.csproj", "{493FA6E1-CD7D-4E85-80DD-4D6866734D4C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechNews.DataAccess", "TechNews.DataAccess\TechNews.DataAccess.csproj", "{F106DB43-5320-44BF-88F8-574483ADC34A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TechNews.DataAccess", "TechNews.DataAccess\TechNews.DataAccess.csproj", "{F106DB43-5320-44BF-88F8-574483ADC34A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechNews.DTOs", "TechNews.DTOs\TechNews.DTOs.csproj", "{617B8347-CED7-419F-A0E4-6726B10ACCAF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TechNews.DTOs", "TechNews.DTOs\TechNews.DTOs.csproj", "{617B8347-CED7-419F-A0E4-6726B10ACCAF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechNews.Entity", "TechNews.Entity\TechNews.Entity.csproj", "{DD871C76-532F-4C32-B8EB-C72AC56E0C98}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TechNews.Entity", "TechNews.Entity\TechNews.Entity.csproj", "{DD871C76-532F-4C32-B8EB-C72AC56E0C98}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechNews.Mapping", "TechNews.Mapping\TechNews.Mapping.csproj", "{72BBC007-FE31-485C-A9DE-B098A6278BE7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TechNews.Mapping", "TechNews.Mapping\TechNews.Mapping.csproj", "{72BBC007-FE31-485C-A9DE-B098A6278BE7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechNews.API", "TechNews.API\TechNews.API.csproj", "{7D59FA39-1D01-4D9E-868E-B16D7F75E426}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TechNews.API", "TechNews.API\TechNews.API.csproj", "{7D59FA39-1D01-4D9E-868E-B16D7F75E426}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechNews.Authentication", "TechNews.Authentication\TechNews.Authentication.csproj", "{0CE1A180-2719-46A5-A241-C554EAB58485}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{7D59FA39-1D01-4D9E-868E-B16D7F75E426}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7D59FA39-1D01-4D9E-868E-B16D7F75E426}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7D59FA39-1D01-4D9E-868E-B16D7F75E426}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0CE1A180-2719-46A5-A241-C554EAB58485}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0CE1A180-2719-46A5-A241-C554EAB58485}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0CE1A180-2719-46A5-A241-C554EAB58485}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0CE1A180-2719-46A5-A241-C554EAB58485}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

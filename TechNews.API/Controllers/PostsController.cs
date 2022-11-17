@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using TechNews.Business.Abstract;
 using TechNews.Core.Enums;
@@ -6,6 +7,7 @@ using TechNews.DTOs.Posts;
 
 namespace TechNews.API.Controllers
 {
+    [AllowAnonymous]
     [Route("api/[controller]")]
     [ApiController]
     public class PostsController : ControllerBase
