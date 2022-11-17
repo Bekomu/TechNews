@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TechNews.Authentication.Config;
 using TechNews.Authentication.TokenServices.Abstract;
+using TechNews.DataAccess.EntityFrameWork.Context;
 
 namespace TechNews.Authentication.TokenServices.Concrete
 {
@@ -31,7 +32,7 @@ namespace TechNews.Authentication.TokenServices.Concrete
                 Subject = new ClaimsIdentity(new Claim[]
                 {
                     new Claim("Id", user.Id.ToString()),
-                    new Claim(ClaimTypes.NameIdentifier, user.Id),
+                    new Claim(ClaimTypes.NameIdentifier, user.UserName),
                     new Claim(JwtRegisteredClaimNames.Sub,user.Email),
                     new Claim(JwtRegisteredClaimNames.Email,user.Email),
                     new Claim(JwtRegisteredClaimNames.Jti,Guid.NewGuid().ToString()),
@@ -41,6 +42,7 @@ namespace TechNews.Authentication.TokenServices.Concrete
                 SigningCredentials = new SigningCredentials(
                     new SymmetricSecurityKey(tokenKey), SecurityAlgorithms.HmacSha256Signature)
             };
+
 
             var token = tokenHandler.CreateToken(tokenDescriptor);
 

@@ -7,7 +7,6 @@ using TechNews.Dtos.Admins;
 
 namespace TechNews.API.Controllers
 {
-    [Authorize(AuthenticationSchemes = "Bearer")]
     [Route("api/[controller]")]
     [ApiController]
     public class AdminsController : ControllerBase
@@ -39,18 +38,20 @@ namespace TechNews.API.Controllers
             return Ok(result);
         }
 
-        [HttpPost]
-        public async Task<IActionResult> Add(AdminCreateDTO createAdminDto)
-        {
-            if (!ModelState.IsValid) return BadRequest(ModelState);
 
-            var result = await _adminService.Add(createAdminDto);
+        // TODO - önemli
+        //[HttpPost]
+        //public async Task<IActionResult> Add(AdminCreateDTO createAdminDto)
+        //{
+        //    if (!ModelState.IsValid) return BadRequest(ModelState);
 
-            if (result.ResultStatus != ResultStatus.Success) return BadRequest(result);
+        //    var result = await _adminService.Add(createAdminDto);
 
-            return Ok(result);
+        //    if (result.ResultStatus != ResultStatus.Success) return BadRequest(result);
 
-        }
+        //    return Ok(result);
+
+        //}
 
         [HttpPut]
         public async Task<ActionResult> Update([FromBody] AdminUpdateDTO adminUpdateDto)

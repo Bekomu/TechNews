@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TechNews.Authentication.DTOs;
 using TechNews.Dtos.Admins;
 using TechNews.Entity.Concrete;
 
@@ -16,6 +17,7 @@ namespace TechNews.Business.AutoMapper.Profiles
             CreateMap<AdminDTO, Admin>().ReverseMap();
             CreateMap<AdminCreateDTO, Admin>();
             CreateMap<AdminUpdateDTO, Admin>();
+            CreateMap<RegisterDTO, Admin>();
         }
     }
 }

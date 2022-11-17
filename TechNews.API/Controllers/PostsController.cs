@@ -7,7 +7,6 @@ using TechNews.DTOs.Posts;
 
 namespace TechNews.API.Controllers
 {
-    [AllowAnonymous]
     [Route("api/[controller]")]
     [ApiController]
     public class PostsController : ControllerBase

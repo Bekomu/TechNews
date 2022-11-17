@@ -27,38 +27,30 @@ builder.Services.Configure<ApiBehaviorOptions>(o =>
 {
     o.SuppressModelStateInvalidFilter = true;
 });
-// FluentValidation
 
 
 // Automapper
 builder.Services.AddAutoMapper(typeof(IProfile).Assembly);
-// Automapper
 
 
 // Autofac
 builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
 builder.Host.ConfigureContainer<ContainerBuilder>(containerbuilder => containerbuilder.RegisterModule(new ServiceModuleExtensions()));
-// Autofac
-
-
-// JWT
-builder.Services.AddAuthenticationServices(builder.Configuration);
-// JWT 
 
 
 // Identity
 builder.Services.AddIdentity<IdentityUser, IdentityRole>()
                 .AddEntityFrameworkStores<TechNewsDbContext>()
                 .AddDefaultTokenProviders();
-// Identity
 
 
 // FluentValidation \/
 // Add services to the container.
-builder.Services.AddControllers(opt =>
-{
-    opt.Filters.Add(new AuthorizeFilter());
-}).AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<CreateAdminValidator>());
+builder.Services.AddControllers().AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<CreateAdminValidator>());
+
+
+// JWT
+builder.Services.AddAuthenticationServices(builder.Configuration);
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -74,6 +66,17 @@ builder.Services.AddSwaggerGen(c =>
         In = ParameterLocation.Header,
         Description = "Enter 'Bearer' [space] and then your valid token in the text input below.\r\n\r\nExample: \"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9\"",
     });
+
+    c.AddSecurityRequirement(new OpenApiSecurityRequirement
+       {{new OpenApiSecurityScheme
+             { Reference = new OpenApiReference
+               {
+                   Type = ReferenceType.SecurityScheme,
+                   Id = "Bearer"
+               }
+             },
+             new string[] {}
+       }});
 });
 
 
@@ -86,6 +89,7 @@ app.SeedDbAsync();
 
 
 app.UseCors(x => x
+            .SetIsOriginAllowed(origin => true)
             .AllowAnyOrigin()
             .AllowAnyMethod()
             .AllowAnyHeader());
@@ -97,10 +101,10 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
+//app.UseHttpsRedirection();
 
-app.UseAuthentication();
 app.UseRouting();
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

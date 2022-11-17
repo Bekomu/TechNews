@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TechNews.Authentication.DTOs;
 using TechNews.Business.Abstract;
 using TechNews.Core.Enums;
 using TechNews.Core.Result;
@@ -29,9 +30,11 @@ namespace TechNews.Business.Concrete
             _accountService = accountService;
         }
 
-        public async Task<IDataResult<AdminDTO>> Add(AdminCreateDTO createAdminDto)
+        // TODO - önemli
+
+        public async Task<IDataResult<AdminDTO>> Add(RegisterDTO registerDTO)
         {
-            var createdAdmin = _mapper.Map<Admin>(createAdminDto);
+            var createdAdmin = _mapper.Map<Admin>(registerDTO);
             var newUser = new IdentityUser()
             {
                 Email = createdAdmin.Email,
@@ -41,9 +44,7 @@ namespace TechNews.Business.Concrete
                 EmailConfirmed = true
             };
 
-            IdentityResult identityResult = await _userManager.CreateAsync(newUser, createAdminDto.Password);
-            // TODO : identity nin pass kontrolü yapıp yapmadığını test et
-
+            IdentityResult identityResult = await _userManager.CreateAsync(newUser, registerDTO.Password);
 
             if (!identityResult.Succeeded)
             {

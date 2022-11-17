@@ -22,10 +22,10 @@ namespace TechNews.API.Extensions
             var tokenValidationParameters = new TokenValidationParameters
             {
                 ValidateIssuerSigningKey = true,
-                IssuerSigningKey = new SymmetricSecurityKey(key), //TODO
-                ValidateIssuer = false, //TODO
-                ValidateAudience = false, //TODO : true
-                RequireExpirationTime = false, //TODO
+                IssuerSigningKey = new SymmetricSecurityKey(key), 
+                ValidateIssuer = false, 
+                ValidateAudience = false, 
+                RequireExpirationTime = false, 
                 ValidateLifetime = true
             };
 
@@ -36,14 +36,16 @@ namespace TechNews.API.Extensions
                 options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
                 options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
                 options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+
             }).AddJwtBearer(x =>
             {
-                x.RequireHttpsMetadata = false; //TODO
+                x.Audience = configuration["Application:Audience"]; 
+                x.RequireHttpsMetadata = false; 
                 x.SaveToken = true;
                 x.TokenValidationParameters = tokenValidationParameters;
             });
 
-            services.AddScoped<IJWTAuthenticationService, JWTAuthenticationService>();
+            services.AddSingleton<IJWTAuthenticationService, JWTAuthenticationService>() ;
         }
 
         

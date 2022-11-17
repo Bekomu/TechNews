@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TechNews.Authentication.Results;
 using TechNews.Core.Result;
 using TechNews.Dtos.Admins;
 
@@ -12,7 +13,9 @@ namespace TechNews.Business.Abstract
     public interface IAccountService
     {
         // TODO : authenticate yapılacak
-
+        Task<IDataResult<AdminDTO>> Register(AdminCreateDTO createAdminDto);
+        Task<AuthResult> Authenticate(string email);
+        Task<IDataResult<IdentityUser>> FindByEmailAsync(string email);
         Task<IResult> CheckPasswordAsync(IdentityUser identityUser, string password);
         Task<IdentityResult> DeleteAsync(string identityId);
     }
