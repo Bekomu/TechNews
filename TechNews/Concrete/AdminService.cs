@@ -56,6 +56,15 @@ namespace TechNews.Business.Concrete
             return new DataResult<List<AdminDTO>>(ResultStatus.Success, datas);
         }
 
+        public async Task<IDataResult<AdminDTO>> GetByEmail(string email)
+        {
+            var admin = await _adminRepository.GetByEmail(email);
+
+            var adminDto = _mapper.Map<AdminDTO>(admin);
+
+            return new DataResult<AdminDTO>(ResultStatus.Success, adminDto);
+        }
+
         public async Task<IDataResult<AdminDTO>> GetById(Guid id)
         {
             var admin = await _adminRepository.GetById(id);

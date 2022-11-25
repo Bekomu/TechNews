@@ -13,6 +13,7 @@ namespace TechNews.Business.Abstract
     {
         Task<IDataResult<List<AdminDTO>>> GetAll();
         Task<IDataResult<AdminDTO>> GetById(Guid id);
+        Task<IDataResult<AdminDTO>> GetByEmail(string email);
         Task<IDataResult<AdminDTO>> Update(AdminUpdateDTO updateAdminDto);
         Task<IResult> Delete(Guid id);
     }

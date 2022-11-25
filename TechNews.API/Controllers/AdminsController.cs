@@ -39,20 +39,15 @@ namespace TechNews.API.Controllers
             return Ok(result);
         }
 
+        [HttpGet("GetByEmail")]
+        public async Task<IActionResult> GetByEmail(string email)
+        {
+            var result = await _adminService.GetByEmail(email);
 
-        // TODO - önemli
-        //[HttpPost]
-        //public async Task<IActionResult> Add(AdminCreateDTO createAdminDto)
-        //{
-        //    if (!ModelState.IsValid) return BadRequest(ModelState);
+            if (result.ResultStatus != ResultStatus.Success) return BadRequest(result);
 
-        //    var result = await _adminService.Add(createAdminDto);
-
-        //    if (result.ResultStatus != ResultStatus.Success) return BadRequest(result);
-
-        //    return Ok(result);
-
-        //}
+            return Ok(result);
+        }
 
         [HttpPut]
         public async Task<ActionResult> Update([FromBody] AdminUpdateDTO adminUpdateDto)

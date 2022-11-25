@@ -10,5 +10,6 @@ namespace TechNews.DataAccess.Abstract
 {
     public interface IAdminRepository : IRepository<Admin>
     {
+        Task<Admin> GetByEmail(string email);
     }
 }
