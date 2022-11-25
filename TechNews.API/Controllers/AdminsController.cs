@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.IdentityModel.Tokens.Jwt;
+using System.Net.Http.Headers;
 using TechNews.Business.Abstract;
 using TechNews.Core.Enums;
 using TechNews.Dtos.Admins;
@@ -40,8 +42,22 @@ namespace TechNews.API.Controllers
         }
 
         [HttpGet("GetByEmail")]
-        public async Task<IActionResult> GetByEmail(string email)
+        public async Task<IActionResult> GetByEmail()
         {
+            var headerString = Request.Headers["Authorization"];
+            if (string.IsNullOrEmpty(headerString))
+            {
+                return Unauthorized();
+            }
+
+            var headerToken = "";
+            if (AuthenticationHeaderValue.TryParse(headerString, out var headerValue))
+            {
+                headerToken = headerValue.Parameter;
+            }
+            var token = new JwtSecurityToken(jwtEncodedString: headerToken);
+            var email = token.Claims.First(x => x.Type == "email").Value;
+
             var result = await _adminService.GetByEmail(email);
 
             if (result.ResultStatus != ResultStatus.Success) return BadRequest(result);
