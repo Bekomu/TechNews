@@ -1,0 +1,98 @@
+[
+  {
+    "name": "home",
+    "path": "/home",
+    "component": "C:\\\\Users\\\\Patron\\\\source\\\\repos\\\\TechNews_FE\\\\technews-fe\\\\pages\\\\home\\\\index.vue",
+    "chunkName": "pages/home/index"
+  },
+  {
+    "name": "login",
+    "path": "/login",
+    "component": "C:\\\\Users\\\\Patron\\\\source\\\\repos\\\\TechNews_FE\\\\technews-fe\\\\pages\\\\login\\\\index.vue",
+    "chunkName": "pages/login/index"
+  },
+  {
+    "name": "news",
+    "path": "/news",
+    "component": "C:\\\\Users\\\\Patron\\\\source\\\\repos\\\\TechNews_FE\\\\technews-fe\\\\pages\\\\news\\\\index.vue",
+    "chunkName": "pages/news/index"
+  },
+  {
+    "name": "register",
+    "path": "/register",
+    "component": "C:\\\\Users\\\\Patron\\\\source\\\\repos\\\\TechNews_FE\\\\technews-fe\\\\pages\\\\register\\\\index.vue",
+    "chunkName": "pages/register/index"
+  },
+  {
+    "name": "components-latestNewsBox",
+    "path": "/components/latestNewsBox",
+    "component": "C:\\\\Users\\\\Patron\\\\source\\\\repos\\\\TechNews_FE\\\\technews-fe\\\\pages\\\\components\\\\latestNewsBox.vue",
+    "chunkName": "pages/components/latestNewsBox"
+  },
+  {
+    "name": "components-loginBox",
+    "path": "/components/loginBox",
+    "component": "C:\\\\Users\\\\Patron\\\\source\\\\repos\\\\TechNews_FE\\\\technews-fe\\\\pages\\\\components\\\\loginBox.vue",
+    "chunkName": "pages/components/loginBox"
+  },
+  {
+    "name": "components-manageNewsBox",
+    "path": "/components/manageNewsBox",
+    "component": "C:\\\\Users\\\\Patron\\\\source\\\\repos\\\\TechNews_FE\\\\technews-fe\\\\pages\\\\components\\\\manageNewsBox.vue",
+    "chunkName": "pages/components/manageNewsBox"
+  },
+  {
+    "name": "components-newsBox",
+    "path": "/components/newsBox",
+    "component": "C:\\\\Users\\\\Patron\\\\source\\\\repos\\\\TechNews_FE\\\\technews-fe\\\\pages\\\\components\\\\newsBox.vue",
+    "chunkName": "pages/components/newsBox"
+  },
+  {
+    "name": "components-newsMain",
+    "path": "/components/newsMain",
+    "component": "C:\\\\Users\\\\Patron\\\\source\\\\repos\\\\TechNews_FE\\\\technews-fe\\\\pages\\\\components\\\\newsMain.vue",
+    "chunkName": "pages/components/newsMain"
+  },
+  {
+    "name": "components-registerBox",
+    "path": "/components/registerBox",
+    "component": "C:\\\\Users\\\\Patron\\\\source\\\\repos\\\\TechNews_FE\\\\technews-fe\\\\pages\\\\components\\\\registerBox.vue",
+    "chunkName": "pages/components/registerBox"
+  },
+  {
+    "name": "news-create",
+    "path": "/news/create",
+    "component": "C:\\\\Users\\\\Patron\\\\source\\\\repos\\\\TechNews_FE\\\\technews-fe\\\\pages\\\\news\\\\create\\\\index.vue",
+    "chunkName": "pages/news/create/index"
+  },
+  {
+    "name": "news-delete",
+    "path": "/news/delete",
+    "component": "C:\\\\Users\\\\Patron\\\\source\\\\repos\\\\TechNews_FE\\\\technews-fe\\\\pages\\\\news\\\\delete\\\\index.vue",
+    "chunkName": "pages/news/delete/index"
+  },
+  {
+    "name": "news-edit",
+    "path": "/news/edit",
+    "component": "C:\\\\Users\\\\Patron\\\\source\\\\repos\\\\TechNews_FE\\\\technews-fe\\\\pages\\\\news\\\\edit\\\\index.vue",
+    "chunkName": "pages/news/edit/index"
+  },
+  {
+    "name": "news-delete-id",
+    "path": "/news/delete/:id",
+    "component": "C:\\\\Users\\\\Patron\\\\source\\\\repos\\\\TechNews_FE\\\\technews-fe\\\\pages\\\\news\\\\delete\\\\_id\\\\index.vue",
+    "chunkName": "pages/news/delete/_id/index"
+  },
+  {
+    "name": "news-edit-id",
+    "path": "/news/edit/:id",
+    "component": "C:\\\\Users\\\\Patron\\\\source\\\\repos\\\\TechNews_FE\\\\technews-fe\\\\pages\\\\news\\\\edit\\\\_id\\\\index.vue",
+    "chunkName": "pages/news/edit/_id/index"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "C:\\\\Users\\\\Patron\\\\source\\\\repos\\\\TechNews_FE\\\\technews-fe\\\\pages\\\\index.vue",
+    "chunkName": "pages/index"
+  }
+]
